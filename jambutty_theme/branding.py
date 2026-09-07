@@ -14,6 +14,8 @@ def update_website_context(context):
         context["brand_name"] = BRAND
         context["app_logo"] = LOGO
         context["favicon"] = FAVICON
+        context["splash_image"] = LOGO
+        context["banner_image"] = LOGO
     except Exception:
         pass
     return context

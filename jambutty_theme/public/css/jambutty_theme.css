@@ -339,3 +339,22 @@ textarea:focus {
   font-weight: 800;
   letter-spacing: -0.01em;
 }
+
+
+/* ---------- Rebrand / hide default Frappe logos & splash icons ---------- */
+img[src*="frappe-framework-logo"],
+img[src*="frappe-logo"],
+img[src*="erpnext-logo"],
+img[src*="frappe-favicon"],
+img[src*="erpnext-favicon"],
+.splash img,
+#splash img,
+.app-logo:not([src*="jambutty"]) {
+  content: url("/assets/jambutty_theme/images/jambutty-logo.svg") !important;
+}
+
+.splash,
+#splash,
+.freeze-loading {
+  background-color: var(--jb-ink) !important;
+}

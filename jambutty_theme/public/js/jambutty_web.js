@@ -4,11 +4,31 @@
   var SHORT = "JBERP";
   var FW = "JB";
   var LOGO = "/assets/jambutty_theme/images/jambutty-logo.svg";
+  var FAVICON = "/assets/jambutty_theme/images/favicon.svg";
   var SUPPORT_URL = "https://totalflow.io";
   var VENDOR_URL = /^(https?:)?\/\/(.*\.)?(frappe\.io|discuss\.frappe\.io|docs\.erpnext\.com|erpnext\.com|github\.com)(\/|:|\?|#|$)/i;
   var SKIP_TAGS = { INPUT: 1, TEXTAREA: 1, SCRIPT: 1, STYLE: 1, CODE: 1, PRE: 1, SELECT: 1, OPTION: 1 };
 
+  function force_favicon() {
+    try {
+      var links = document.querySelectorAll("link[rel*='icon']");
+      if (links.length === 0) {
+        var link = document.createElement("link");
+        link.rel = "shortcut icon";
+        link.href = FAVICON;
+        document.head.appendChild(link);
+      } else {
+        links.forEach(function (l) {
+          l.href = FAVICON;
+        });
+      }
+    } catch (e) {}
+  }
+
+  force_favicon();
+
   function clean(root) {
+    force_favicon();
     var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     var nodes = [];
     while (walker.nextNode()) nodes.push(walker.currentNode);
@@ -29,7 +49,7 @@
       });
       root.querySelectorAll("img").forEach(function (img) {
         var s = img.getAttribute("src") || "";
-        if (/erpnext-|frappe-|erpnext\/|frappe-framework-logo/i.test(s) && !img.dataset.jb) {
+        if (/erpnext-|frappe-|erpnext\/|frappe-framework-logo|frappe-favicon/i.test(s) && !img.dataset.jb) {
           img.dataset.jb = "1";
           img.src = LOGO;
         }
