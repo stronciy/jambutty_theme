@@ -12,10 +12,8 @@ def update_website_context(context):
     """Force brand defaults on website context."""
     try:
         context["brand_name"] = BRAND
-        if not context.get("app_logo"):
-            context["app_logo"] = LOGO
-        if not context.get("favicon"):
-            context["favicon"] = FAVICON
+        context["app_logo"] = LOGO
+        context["favicon"] = FAVICON
     except Exception:
         pass
     return context
