@@ -1,0 +1,216 @@
+/* JBERP modern theme — Ink Navy + Gold */
+:root {
+  --jb-ink: #0f1b2d;
+  --jb-navy: #1e3a5f;
+  --jb-navy-deep: #152a45;
+  --jb-gold: #d9a441;
+  --jb-gold-bright: #ebc06a;
+  --jb-sand: #f1ede6;
+  --jb-mist: #f5f7fa;
+  --jb-text: #1a2332;
+  --jb-muted: #5b6b7f;
+  --jb-radius: 12px;
+  --jb-shadow: 0 12px 40px rgba(15, 27, 45, 0.16);
+  --jb-shadow-sm: 0 2px 10px rgba(15, 27, 45, 0.1);
+}
+
+/* ---------- base ---------- */
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+h1, h2, h3, .page-head h3, .widget-title {
+  letter-spacing: -0.01em;
+}
+a:not(.btn) {
+  color: var(--jb-navy);
+}
+a:not(.btn):hover {
+  color: var(--jb-navy-deep);
+}
+
+/* ---------- website navbar ---------- */
+.navbar .navbar-brand,
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--jb-ink) !important;
+}
+.navbar .navbar-brand img,
+.navbar-brand img {
+  max-height: 30px;
+  width: auto;
+  border-radius: 7px;
+}
+.web-footer .footer-powered,
+.footer-powered {
+  display: none !important;
+}
+
+/* ---------- login ---------- */
+.for-login {
+  background:
+    radial-gradient(900px 480px at 85% -5%, rgba(217, 164, 65, 0.22), transparent 60%),
+    radial-gradient(1000px 600px at -10% 110%, rgba(30, 58, 95, 0.5), transparent 60%),
+    linear-gradient(135deg, var(--jb-navy) 0%, var(--jb-ink) 70%);
+  min-height: 100vh;
+}
+.for-login .page-card,
+body[data-path="login"] .page-card {
+  border: 0;
+  border-radius: 18px;
+  box-shadow: var(--jb-shadow);
+  border-top: 4px solid var(--jb-gold);
+  padding-top: 8px;
+}
+.for-login .page-card .page-card-head h4,
+body[data-path="login"] .page-card-head h4 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--jb-ink);
+}
+.for-login .form-control,
+body[data-path="login"] .form-control {
+  border-radius: 10px;
+  border-color: #dfe5ee;
+  padding: 10px 14px;
+}
+.for-login .form-control:focus,
+body[data-path="login"] .form-control:focus {
+  border-color: var(--jb-navy);
+  box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.25);
+}
+.for-login .btn-primary,
+body[data-path="login"] .btn-primary {
+  background: linear-gradient(135deg, var(--jb-navy), var(--jb-navy-deep));
+  border: 0;
+  border-radius: 10px;
+  font-weight: 700;
+  padding: 10px 14px;
+  box-shadow: var(--jb-shadow-sm);
+}
+.for-login .btn-primary:hover,
+body[data-path="login"] .btn-primary:hover {
+  filter: brightness(1.12);
+}
+.for-login .login-divider,
+body[data-path="login"] .login-divider {
+  color: var(--jb-muted);
+}
+
+/* ---------- desk navbar ---------- */
+.navbar {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e6ebf2;
+}
+.navbar .navbar-brand span {
+  color: var(--jb-ink);
+}
+
+/* ---------- desk sidebar ---------- */
+.desk-sidebar .standard-sidebar-item,
+.layout-side-section .standard-sidebar-item {
+  border-radius: 0 10px 10px 0;
+}
+.desk-sidebar .standard-sidebar-item:hover,
+.layout-side-section .standard-sidebar-item:hover {
+  background: var(--jb-mist);
+}
+.desk-sidebar .standard-sidebar-item.selected,
+.layout-side-section .standard-sidebar-item.selected {
+  background: linear-gradient(90deg, rgba(217, 164, 65, 0.16), rgba(217, 164, 65, 0.05));
+  border-left: 3px solid var(--jb-gold);
+  font-weight: 600;
+}
+.promotional-banner {
+  border-radius: 10px;
+}
+
+/* ---------- buttons / forms / widgets ---------- */
+.btn-primary {
+  background: linear-gradient(135deg, var(--jb-navy), var(--jb-navy-deep));
+  border: 0;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: var(--jb-navy-deep) !important;
+  border: 0 !important;
+  filter: brightness(1.1);
+}
+.btn-default {
+  border-radius: 8px;
+}
+.form-control:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--jb-navy) !important;
+  box-shadow: 0 0 0 3px rgba(217, 164, 65, 0.22) !important;
+}
+.widget {
+  border-radius: var(--jb-radius);
+  box-shadow: var(--jb-shadow-sm);
+  border: 1px solid #e9eef5;
+}
+.widget .widget-title {
+  color: var(--jb-ink);
+}
+.modal-content {
+  border-radius: 16px;
+  border: 0;
+  box-shadow: var(--jb-shadow);
+}
+.indicator-pill.gray,
+.indicator-pill.blue {
+  background: var(--jb-mist);
+  color: var(--jb-navy);
+}
+.page-head {
+  border-bottom: 1px solid #e6ebf2;
+}
+.list-row-head {
+  background: var(--jb-mist);
+  border-radius: 8px;
+  color: var(--jb-muted);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- desk v16 (desktop) ---------- */
+.desktop-navbar {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e6ebf2;
+}
+.desktop-navbar #brand-logo {
+  max-height: 30px;
+  width: auto;
+  border-radius: 7px;
+}
+.body-sidebar {
+  background: #fff;
+  border-right: 1px solid #e6ebf2;
+}
+.body-sidebar .standard-sidebar-item {
+  border-radius: 0 10px 10px 0;
+  color: var(--jb-text);
+}
+.body-sidebar .standard-sidebar-item:hover {
+  background: var(--jb-mist);
+}
+.body-sidebar .standard-sidebar-item.active-sidebar {
+  background: linear-gradient(90deg, rgba(217, 164, 65, 0.16), rgba(217, 164, 65, 0.05));
+  border-left: 3px solid var(--jb-gold);
+  font-weight: 600;
+}
+.workspace-header {
+  border-bottom: 1px solid #e6ebf2;
+}
+.workspace-header .workspace-title {
+  color: var(--jb-ink);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
