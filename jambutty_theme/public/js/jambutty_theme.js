@@ -181,11 +181,23 @@
     });
   }
 
+  function remove_frappe_mail_option() {
+    var sel = document.querySelector('select[data-fieldname="service"]');
+    if (!sel || sel.dataset.jbCleaned) return;
+    sel.dataset.jbCleaned = "1";
+    for (var i = sel.options.length - 1; i >= 0; i--) {
+      if (sel.options[i].text === "Frappe Mail" || sel.options[i].value === "Frappe Mail") {
+        sel.remove(i);
+      }
+    }
+  }
+
   function boot() {
     patch_window_open();
     swap(document.body || document.documentElement);
     rebrand_title();
     rebrand_navbar();
+    remove_frappe_mail_option();
     if (!patch_about()) {
       var tries = 0;
       var timer = setInterval(function () {
@@ -200,6 +212,7 @@
         if (m.type === "characterData" && m.target) schedule(m.target);
       }
       rebrand_title();
+      remove_frappe_mail_option();
     }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   }
 
