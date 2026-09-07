@@ -48,12 +48,36 @@ a:not(.btn):hover {
 }
 
 /* ---------- login ---------- */
+.page-content-wrapper {
+  min-height: 100vh;
+}
+.page-content-wrapper > main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page-content-wrapper > main > .page_content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body[data-path="login"] .page-breadcrumbs,
+body[data-path="login"] .page-header-wrapper {
+  display: none;
+}
 .for-login {
   background:
     radial-gradient(900px 480px at 85% -5%, rgba(217, 164, 65, 0.22), transparent 60%),
     radial-gradient(1000px 600px at -10% 110%, rgba(30, 58, 95, 0.5), transparent 60%),
     linear-gradient(135deg, var(--jb-navy) 0%, var(--jb-ink) 70%);
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+  width: 100%;
 }
 .for-login .page-card,
 body[data-path="login"] .page-card {
@@ -62,6 +86,10 @@ body[data-path="login"] .page-card {
   box-shadow: var(--jb-shadow);
   border-top: 4px solid var(--jb-gold);
   padding-top: 8px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  flex-shrink: 0;
 }
 .for-login .page-card .page-card-head h4,
 body[data-path="login"] .page-card-head h4 {
