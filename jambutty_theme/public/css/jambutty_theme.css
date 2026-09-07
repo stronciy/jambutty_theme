@@ -341,18 +341,7 @@ textarea:focus {
 }
 
 
-/* ---------- Rebrand / hide default Frappe logos & splash icons ---------- */
-img[src*="frappe-framework-logo"],
-img[src*="frappe-logo"],
-img[src*="erpnext-logo"],
-img[src*="frappe-favicon"],
-img[src*="erpnext-favicon"],
-.splash img,
-#splash img,
-.app-logo:not([src*="jambutty"]) {
-  content: url("/assets/jambutty_theme/images/jambutty-logo.svg") !important;
-}
-
+/* ---------- Rebrand / hide default Frappe splash icons ---------- */
 .splash,
 #splash,
 .freeze-loading {
